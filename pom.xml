@@ -6,8 +6,20 @@
   <groupId>com.atgugui</groupId>
   <artifactId>Java进阶</artifactId>
   <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <name>Java进阶</name>
+    <name>Java进阶</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
