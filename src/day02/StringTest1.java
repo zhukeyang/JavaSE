@@ -4,6 +4,7 @@ import org.junit.Test;
 
 /*
 * 涉及到string类与其它结构之间的转换
+* 说明：解码时，要求解码使用的字符集必须与编码时使用的字符集一致
 * */
 public class StringTest1 {
     @Test
@@ -16,7 +17,6 @@ public class StringTest1 {
         }
         String s2 = new String(bytes);//使用默认字节码(UTF-8)，进行编码
         System.out.println(s2);
-
 
     }
     @Test
