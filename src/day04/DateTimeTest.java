@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /*
@@ -49,5 +50,38 @@ public class DateTimeTest {
         System.out.println(date);
         java.sql.Date birthDate=new java.sql.Date(date.getTime());
         System.out.println(birthDate);
+    }
+    /*
+    * Calendar日历类（抽象类）
+    *
+    * */
+    @Test
+    public void testCalendar()
+    {
+        /*
+        * 1.实例化
+        * 方式一：创建其子类(GregorianCalendar)的对象
+        * 方式二：调用其静态方法getInstance()
+        * */
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.getClass());
+        //2.常用方法
+        //get()
+        int i = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println(i);
+        //set()
+        calendar.set(Calendar.DAY_OF_MONTH,22);
+        i = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println(i);
+        //add()
+        calendar.add(Calendar.DAY_OF_MONTH,3);
+        i = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println(i);
+        //getTime():日历类-->Date
+        Date date=calendar.getTime();
+        System.out.println(date);
+        //setTime():Date-->日历类
+        Date date1=new Date();
+        calendar.setTime(date1);
     }
 }
