@@ -1,5 +1,6 @@
 package day06;
 
+
 public class User {
     private String name;
     private int age;
@@ -34,5 +35,23 @@ public class User {
     public User(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        if (getAge() != user.getAge()) return false;
+        return getName().equals(user.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName().hashCode();
+        result = 31 * result + getAge();
+        return result;
     }
 }

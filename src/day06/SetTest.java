@@ -4,6 +4,8 @@ package day06;
 import org.junit.Test;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /*
 * Set接口存储无序的、不可重复的数据
@@ -32,6 +34,22 @@ public class SetTest {
         hashSet.add(new Person("Tom",12));
         hashSet.add(new User("Tom",12));
         for (Object o : hashSet) {
+            System.out.println(o);
+        }
+    }
+//    LinkedHashSet作为HashSet的子类，在添加数据时，每个数据还维护了两个引用，记录此数据前一个数据和后一个数据
+//    优点：对于频繁的遍历操作，LinkedHashSet效率高于HashSet
+    @Test
+    public void test1()
+    {
+
+        Set set = new LinkedHashSet();
+        set.add(123);
+        set.add(456);
+        set.add(789);
+        set.add(new User("Tom",12));
+        set.add(new Person("Jerry",13));
+        for (Object o : set) {
             System.out.println(o);
         }
     }
